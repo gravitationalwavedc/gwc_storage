@@ -71,6 +71,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y nfs-kernel-server
+    mkdir -p /mnt/sharedfolder
     chown nobody:nogroup /mnt/sharedfolder
     chmod 777 /mnt/sharedfolder
   SHELL
